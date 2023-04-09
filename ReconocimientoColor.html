@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>	Reconocimiento de color</title>
+</head>
+<body>
+	<video id="video" playsinline autoplay style="display: none"></video>
+	<canvas id="canvas" width="475" height="475"></canvas>
+
+	<script type="text/javascript">
+
+		window.onload = function(){
+			mostrarCamara();
+		}
+
+		var video;
+		var canvas;
+
+		var altoCamara = 720;
+		var anchoCamara = 720;
+
+		function mostrarCamara(){
+			video = document.getElementById("video");
+			canvas = document.getElementById("canvas");
+
+			var opciones = {
+				audio: false,
+				video: {
+					width: anchoCamara, height: altoCamara
+				}
+			};
+
+			if(navigator.mediaDevices.getUserMedia) {
+				navigator.mediaDevices.getUserMedia(opciones)
+				    .then(function(stream) {
+				    	video.srcObject = stream;
+				    	procesarCamara();
+				    })
+				    .catch(function(err) {
+				    	console.log("Oops, hubo un error", err);
+				    })
+			} else {
+				console.log("No existe la funcion getUserMedia... oops :( ");
+			}
+		}
+		
+		function procesarCamara(){
+			var ctx = canvas.getContext("2d");
+
+			ctx.drawImage(video, 0, 0, anchoCamara, altoCamara, 0, 0, canvas.width, canvas.height);
+			setTimeout(procesarCamara, 20);
+		}
+
+	</script>
+</body>
+</html>
