@@ -8,6 +8,8 @@ crecion de puerto con python3
 con windows
 
     python -m SimpleHTTPServer [puerto]
-    pyt -m http.server [purrto]
 
+```
+py -m http.server [puerto]
+```
 
