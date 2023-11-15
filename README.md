@@ -16,7 +16,10 @@ Algunos recursos útiles para entender la matriz de convoluciones son:
 
 Para ejecutar la aplicación y experimentar con los filtros de convolución, puedes utilizar un servidor web local. Aquí hay algunas opciones:
 
-1. Clona este repositorio:
+1. Clona este repositorio en tu maquina local:
+
+        git clone https://github.com/EmanuelRdzM/imgConvolucionesFilters.git
+
 2. Inicia un servidor web. Si estás en un entorno Linux o macOS, puedes usar Python 3:
 
         $ sudo python3 -m http.server [puerto]
@@ -28,8 +31,8 @@ Para ejecutar la aplicación y experimentar con los filtros de convolución, pue
    py -m http.server [puerto]
    ```
 
-4. Sube tus imagenes favoritas para realizar filtros en ellas, dentro de la carpeta del proyecto
-5. Abre tu navegador web y accede a http://localhost:[puerto] para ver la aplicación en acción.
+3. Sube tus imagenes favoritas para realizar filtros en ellas, dentro de la carpeta del proyecto
+4. Abre tu navegador web y accede a http://localhost:[puerto] para ver la aplicación en acción.
 
 
 
